@@ -1,6 +1,10 @@
 # BPCB
 
+[![Checks](https://github.com/IcaroRamosDM/BPCB/actions/workflows/checks.yml/badge.svg)](https://github.com/IcaroRamosDM/BPCB/actions/workflows/checks.yml)
+
 Executor de testes para PCBs, com pacotes `.bancada`, interface gráfica e ferramentas de comunicação. Os pacotes podem ser produzidos pelo [BPCB Studio](https://github.com/IcaroRamosDM/BPCB-Studio).
+
+A versão 0.16.0 abre pacotes de teste, registra medições e exporta relatórios. Na bancada, o BPCB pode comunicar por I²C, SPI, UART ou JTAG. Para experimentar a interface sem conectar uma placa, abra a demonstração em simulação.
 
 ## Compilar no Linux
 
@@ -25,14 +29,19 @@ cmake --build trabalho/build -j4
 ctest --test-dir trabalho/build --output-on-failure -j1
 ```
 
-## Uso e validação
+## Usar na bancada
 
-Comece pelos exemplos em simulação. Selecione o adaptador e confira pinagem, tensão,
-alimentação e configuração antes de autorizar qualquer transmissão. Recursos disponíveis
-dependem do modelo, modo, driver e dispositivo; listar um adaptador não comprova que
-todos os protocolos foram qualificados em hardware. Consulte os documentos em `docs/`.
+Selecione o adaptador, confira a pinagem e a tensão lógica da sua placa e revise a configuração antes de transmitir. O histórico de medições começa desativado. Instale apenas pacotes `.bancada` de procedência conhecida, pois contêm código executável.
 
-Histórico de resultados exige escolha explícita do usuário e começa desativado.
-A demonstração gerada pelo build não acessa hardware. Pacotes de terceiros contêm código executável e devem ser revisados antes da instalação.
+[Adaptadores e conexões](docs/COMUNICACAO.md) · [Laboratório](docs/LABORATORIO.md) · [Preparar um teste](docs/WORKBENCH.md)
 
-Este repositório publica os fontes; não inclui os antigos instaladores locais.
+## Autor
+
+**Icaro Ramos Rodrigues dos Santos**<br>
+Engenheiro Eletrônico
+
+Embedded Systems | Firmware | C | C++ | Python | Dart | Assembly | Hardware Design | PCB Design | STM32 | ARM Cortex-M | Linux | Windows | RISC-V | Verilog | SystemVerilog | UVM | Design Verification | Instrumentation | Signal Processing | Qt | FLTK
+
+GitHub: [IcaroRamosDM](https://github.com/IcaroRamosDM)<br>
+LinkedIn: [icaro-ramos-r](https://www.linkedin.com/in/icaro-ramos-r/)<br>
+[icaroelt@gmail.com](mailto:icaroelt@gmail.com)
