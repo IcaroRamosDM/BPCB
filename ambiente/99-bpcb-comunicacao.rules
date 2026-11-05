@@ -1,0 +1,11 @@
+# BPCB: acesso local aos bridges suportados; não desassocia drivers.
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="1a86", ATTR{idProduct}=="5512", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="0403", ATTR{idProduct}=="6014", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="00dd", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea90", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+# Portas UART conservam as regras do driver do sistema e o grupo dialout.
+# CH347T: M1/M3 vendor (somente a interface de barramento é aberta pelo BPCB).
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="1a86", ATTR{idProduct}=="55db", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="1a86", ATTR{idProduct}=="55dd", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+# M2 mantém o driver HID do sistema.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55dc", GROUP="plugdev", MODE="0660", TAG+="uaccess"

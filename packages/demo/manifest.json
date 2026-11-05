@@ -1,0 +1,58 @@
+{
+  "format": "axtor.bancada",
+  "schema": 1,
+  "api": 2,
+  "id": "demonstracao-v1",
+  "version": "2.0.0",
+  "min_app": "0.3.0",
+  "pcb": "Demonstração (sem hardware)",
+  "revision": "V1",
+  "author": "Exemplo da API de bancadas",
+  "platforms": [
+    "linux-x86_64"
+  ],
+  "components": {
+    "R1": "1000 Ω"
+  },
+  "documents": [],
+  "signals": [],
+  "files": {},
+  "tests": [
+    {
+      "id": "corrente",
+      "title": "Corrente em resistor (simulação)",
+      "purpose": "Exemplo executável de uma bancada instalada por arquivo.",
+      "mode": "simulation",
+      "enabled": true,
+      "entry": "code/demo_worker",
+      "timeout": 30,
+      "parameters": [
+        {
+          "id": "voltage",
+          "label": "Tensão simulada",
+          "unit": "V",
+          "default": 12,
+          "min": 0,
+          "max": 100,
+          "step": 0.01
+        },
+        {
+          "id": "delay",
+          "label": "Duração simulada",
+          "unit": "s",
+          "default": 0.3,
+          "min": 0,
+          "max": 20,
+          "step": 0.01
+        }
+      ],
+      "derived": {
+        "current": "1000 * voltage / R1"
+      },
+      "instructions": "SIMULAÇÃO\nEste pacote não acessa nenhuma PCB. O worker incluído no pacote calcula uma corrente.\n\nConfiguração: {voltage:.2f} V sobre R1 = {R1:.0f} Ω. As alterações acompanham a exportação.",
+      "expected": "Corrente simulada esperada: {current:.3f} mA\nNão é uma medição física."
+    }
+  ],
+  "runtime": "native",
+  "min_glibc": "2.43"
+}

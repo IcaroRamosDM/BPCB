@@ -1,0 +1,56 @@
+{
+  "format": "axtor.bancada",
+  "schema": 1,
+  "api": 2,
+  "runtime": "native",
+  "id": "communication-jtag",
+  "version": "1.0.0",
+  "min_app": "0.13.0",
+  "pcb": "Leitura JTAG DR de 32 bits",
+  "revision": "V1",
+  "author": "BPCB — exemplos de comunicação",
+  "platforms": [
+    "linux-x86_64"
+  ],
+  "components": {},
+  "documents": [],
+  "signals": [],
+  "files": {},
+  "communication": {
+    "api": 1,
+    "bus": "jtag",
+    "adapters": [
+      "ch347"
+    ],
+    "min_hz": 1875000,
+    "max_hz": 30000000,
+    "max_transfer": 4,
+    "operations": [
+      {
+        "register": "reset",
+        "label": "Reset TAP"
+      },
+      {
+        "register": "dr",
+        "bits": 32,
+        "write": "00 00 00 00",
+        "label": "DR de 32 bits após reset TAP"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "transferencia",
+      "title": "Leitura JTAG DR de 32 bits",
+      "purpose": "Validar o transporte selecionado com uma operação explícita e limitada.",
+      "mode": "hardware",
+      "enabled": true,
+      "entry": "code/communication_worker",
+      "timeout": 15,
+      "parameters": [],
+      "derived": {},
+      "instructions": "Use o CH347T em M3. Conecte TCK, TMS, TDI, TDO e GND segundo o pinout do alvo, com tensão lógica compatível. O BPCB não aciona TRST. A operação reinicia o TAP e lê 32 bits de DR, em ordem LSB primeiro. Alguns alvos oferecem IDCODE após reset; outros selecionam BYPASS ou possuem múltiplos dispositivos. Confira o manual e a cadeia: o valor recebido não identifica automaticamente a placa nem constitui aprovação. Não há programação de memória, debug de CPU ou escrita de firmware neste exemplo.\n\nSelecione CH347T, JTAG, modo M3, 1875000 Hz, confira as conexões e clique Usar seleção.",
+      "expected": "32 bits brutos de DR, sem critério de aprovação declarado."
+    }
+  ]
+}

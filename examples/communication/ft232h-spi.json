@@ -1,0 +1,14 @@
+{
+  "api": 1,
+  "adapter": "ft232h",
+  "bus": "spi",
+  "device": "",
+  "serial": "",
+  "connections_checked": false,
+  "allow_kernel_detach": false,
+  "timeout_ms": 1000,
+  "frequency_hz": 1000000,
+  "spi_mode": 0,
+  "chip_select": 3,
+  "lsb_first": false
+}

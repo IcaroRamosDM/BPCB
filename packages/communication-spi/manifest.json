@@ -1,0 +1,54 @@
+{
+  "format": "axtor.bancada",
+  "schema": 1,
+  "api": 2,
+  "runtime": "native",
+  "id": "communication-spi",
+  "version": "1.1.0",
+  "min_app": "0.13.0",
+  "pcb": "Loopback SPI do adaptador",
+  "revision": "V1",
+  "author": "BPCB — exemplos de comunicação",
+  "platforms": [
+    "linux-x86_64"
+  ],
+  "components": {},
+  "documents": [],
+  "signals": [],
+  "files": {},
+  "communication": {
+    "api": 1,
+    "bus": "spi",
+    "adapters": [
+      "ft232h",
+      "ch347"
+    ],
+    "max_transfer": 32,
+    "operations": [
+      {
+        "write": "00 A5 5A FF",
+        "read": 4,
+        "expect": "00 A5 5A FF",
+        "label": "Loopback SPI"
+      }
+    ],
+    "min_hz": 1000,
+    "max_hz": 1000000,
+    "clock_stretching": false
+  },
+  "tests": [
+    {
+      "id": "transferencia",
+      "title": "Loopback SPI do adaptador",
+      "purpose": "Validar o transporte selecionado com uma operação explícita e limitada.",
+      "mode": "hardware",
+      "enabled": true,
+      "entry": "code/communication_worker",
+      "timeout": 15,
+      "parameters": [],
+      "derived": {},
+      "instructions": "Desconecte a PCB. FT232H: una AD1 (MOSI) a AD2 (MISO); AD0=SCK e AD3=CS padrão. Waveshare CH347T: selecione M1 antes de conectar o USB e una SDO/MOSI a SDI/MISO; selecione CS0. Confira o pinout e a tensão do seu modelo. Use modo 0, clock solicitado de 1 MHz e MSB primeiro; no CH347 o clock efetivo será 937500 Hz. Os quatro bytes recebidos precisam coincidir com 00 A5 5A FF. O exemplo verifica apenas o transporte do adaptador.\n\nAbra Ferramentas > Comunicação da PCB, confira ligações e níveis, marque a conferência e clique Usar seleção antes de iniciar.",
+      "expected": "Comparação dos bytes declarados."
+    }
+  ]
+}

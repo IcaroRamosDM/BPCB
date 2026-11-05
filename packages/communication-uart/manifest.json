@@ -1,0 +1,56 @@
+{
+  "format": "axtor.bancada",
+  "schema": 1,
+  "api": 2,
+  "runtime": "native",
+  "id": "communication-uart",
+  "version": "1.1.0",
+  "min_app": "0.13.0",
+  "pcb": "Loopback UART do adaptador",
+  "revision": "V1",
+  "author": "BPCB — exemplos de comunicação",
+  "platforms": [
+    "linux-x86_64"
+  ],
+  "components": {},
+  "documents": [],
+  "signals": [],
+  "files": {},
+  "communication": {
+    "api": 1,
+    "bus": "uart",
+    "adapters": [
+      "ch340",
+      "cp2102",
+      "ft232rl",
+      "ft232h",
+      "mcp2221a",
+      "serial",
+      "ch347"
+    ],
+    "max_transfer": 32,
+    "operations": [
+      {
+        "write": "A5 5A 00 FF",
+        "read": 4,
+        "expect": "A5 5A 00 FF",
+        "label": "Loopback UART"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "transferencia",
+      "title": "Loopback UART do adaptador",
+      "purpose": "Validar o transporte selecionado com uma operação explícita e limitada.",
+      "mode": "hardware",
+      "enabled": true,
+      "entry": "code/communication_worker",
+      "timeout": 15,
+      "parameters": [],
+      "derived": {},
+      "instructions": "Desconecte a PCB e ligue TX a RX no próprio adaptador. Em Comunicação da PCB escolha a porta, 115200 baud, 8 bits, nenhuma paridade, 1 parada e nenhum controle de fluxo; DTR e RTS desligados. Os bytes A5 5A 00 FF devem retornar iguais. A abertura da porta pode gerar transientes em DTR/RTS. O exemplo testa apenas a comunicação, não o firmware da PCB.\n\nAbra Ferramentas > Comunicação da PCB, confira ligações e níveis, marque a conferência e clique Usar seleção antes de iniciar.",
+      "expected": "Comparação dos bytes declarados."
+    }
+  ]
+}

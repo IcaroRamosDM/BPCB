@@ -1,0 +1,17 @@
+{
+  "api": 1,
+  "adapter": "ch347",
+  "bus": "uart",
+  "ch347_mode": 3,
+  "device": "COM3",
+  "serial": "",
+  "timeout_ms": 1000,
+  "connections_checked": false,
+  "baud": 115200,
+  "data_bits": 8,
+  "stop_bits": 1,
+  "parity": "none",
+  "flow_control": "none",
+  "dtr": false,
+  "rts": false
+}

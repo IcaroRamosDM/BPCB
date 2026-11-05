@@ -1,0 +1,5 @@
+{
+  "write": "A5 5A 00 FF",
+  "read": 4,
+  "expect": "A5 5A 00 FF"
+}

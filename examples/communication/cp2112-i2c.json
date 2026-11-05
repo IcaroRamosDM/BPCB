@@ -1,0 +1,11 @@
+{
+  "api": 1,
+  "adapter": "cp2112",
+  "bus": "i2c",
+  "device": "",
+  "serial": "",
+  "connections_checked": false,
+  "allow_kernel_detach": false,
+  "timeout_ms": 1000,
+  "frequency_hz": 100000
+}

@@ -1,0 +1,57 @@
+{
+  "format": "axtor.bancada",
+  "schema": 1,
+  "api": 2,
+  "runtime": "native",
+  "id": "communication-i2c",
+  "version": "1.1.0",
+  "min_app": "0.13.0",
+  "pcb": "Leitura de registro I²C",
+  "revision": "V1",
+  "author": "BPCB — exemplos de comunicação",
+  "platforms": [
+    "linux-x86_64"
+  ],
+  "components": {},
+  "documents": [],
+  "signals": [],
+  "files": {},
+  "communication": {
+    "api": 1,
+    "bus": "i2c",
+    "adapters": [
+      "ch341t",
+      "ft232h",
+      "mcp2221a",
+      "cp2112",
+      "ch347"
+    ],
+    "max_transfer": 32,
+    "operations": [
+      {
+        "address": 72,
+        "write": "00",
+        "read": 2,
+        "label": "Registro de 16 bits"
+      }
+    ],
+    "min_hz": 20000,
+    "max_hz": 100000,
+    "clock_stretching": false
+  },
+  "tests": [
+    {
+      "id": "transferencia",
+      "title": "Leitura de registro I²C",
+      "purpose": "Validar o transporte selecionado com uma operação explícita e limitada.",
+      "mode": "hardware",
+      "enabled": true,
+      "entry": "code/communication_worker",
+      "timeout": 15,
+      "parameters": [],
+      "derived": {},
+      "instructions": "Este exemplo envia o seletor de registro 00 ao endereço de 7 bits 0x48 e lê dois bytes com repeated START. Use somente um periférico cujo manual defina essa operação. Edite o manifesto antes de instalar se o endereço, registro ou tamanho forem diferentes. Não existe critério automático de aprovação nem varredura de endereços.\n\nAbra Ferramentas > Comunicação da PCB, confira ligações e níveis, marque a conferência e clique Usar seleção antes de iniciar.",
+      "expected": "Dois bytes exibidos em hexadecimal, sem critério de aprovação."
+    }
+  ]
+}

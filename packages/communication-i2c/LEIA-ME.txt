@@ -1,0 +1,2 @@
+Este exemplo envia o seletor de registro 00 ao endereço de 7 bits 0x48 e lê dois bytes com repeated START. Use somente um periférico cujo manual defina essa operação. Edite o manifesto antes de instalar se o endereço, registro ou tamanho forem diferentes. Não existe critério automático de aprovação nem varredura de endereços.
+

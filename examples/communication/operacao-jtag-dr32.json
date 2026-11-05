@@ -1,0 +1,6 @@
+{
+  "register": "dr",
+  "bits": 32,
+  "write": "00 00 00 00",
+  "label": "DR 32 bits ap\u00f3s reset TAP"
+}

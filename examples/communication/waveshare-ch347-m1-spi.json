@@ -1,0 +1,14 @@
+{
+  "api": 1,
+  "adapter": "ch347",
+  "bus": "spi",
+  "ch347_mode": 1,
+  "device": "",
+  "serial": "",
+  "timeout_ms": 1000,
+  "connections_checked": false,
+  "frequency_hz": 1000000,
+  "spi_mode": 0,
+  "chip_select": 0,
+  "lsb_first": false
+}

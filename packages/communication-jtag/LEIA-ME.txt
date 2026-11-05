@@ -1,0 +1,5 @@
+Use o CH347T em M3. Conecte TCK, TMS, TDI, TDO e GND segundo o pinout do alvo, com tensão lógica compatível. O BPCB não aciona TRST. A operação reinicia o TAP e lê 32 bits de DR, em ordem LSB primeiro. Alguns alvos oferecem IDCODE após reset; outros selecionam BYPASS ou possuem múltiplos dispositivos. Confira o manual e a cadeia: o valor recebido não identifica automaticamente a placa nem constitui aprovação. Não há programação de memória, debug de CPU ou escrita de firmware neste exemplo.
+
+Selecione CH347T, JTAG, modo M3, 1875000 Hz, confira as conexões e clique Usar seleção.
+
+Requer BPCB 0.13.0. Validação física pendente.

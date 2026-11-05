@@ -1,0 +1,11 @@
+{
+  "api": 1,
+  "adapter": "ch347",
+  "bus": "i2c",
+  "ch347_mode": 3,
+  "device": "",
+  "serial": "",
+  "timeout_ms": 1000,
+  "connections_checked": false,
+  "frequency_hz": 20000
+}

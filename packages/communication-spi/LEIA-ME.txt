@@ -1,0 +1,4 @@
+Desconecte a PCB e faça uma ligação local entre AD1 (MOSI) e AD2 (MISO) no adaptador FT232H. AD0 é SCK e AD3 é o CS padrão ativo em zero. Selecione modo 0, 1 MHz e MSB primeiro. Os quatro bytes recebidos precisam coincidir com 00 A5 5A FF. O exemplo testa apenas o caminho de comunicação do adaptador.
+
+
+CH347T: use M1 ou M2, una SDO/MOSI a SDI/MISO, selecione CS0. A 1 MHz solicitado, o clock efetivo é 937500 Hz. A PCB deve estar desconectada.

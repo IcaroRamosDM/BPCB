@@ -1,0 +1,3 @@
+Modelos editáveis. Windows: troque /dev/ttyUSB0 pela porta COM correta. Enumere primeiro e copie o caminho/série quando houver mais de um dispositivo. Confira fisicamente as conexões antes de marcar connections_checked=true. Não há seleção automática nem ligação ao hardware ao abrir estes arquivos. Consulte docs/COMUNICACAO.md.
+
+Waveshare CH347T: há modelos separados para M0/M1/M2/M3 e barramentos compatíveis. M0 exige a porta exata de UART0 ou UART1. M2 usa HID, não COM. JTAG M3 exige pinout e cadeia conhecidos; o formato de uma leitura DR está em operacao-jtag-dr32.json. Os arquivos não autorizam transmissão: confira ligações/níveis e connections_checked. Veja COMUNICACAO.md.

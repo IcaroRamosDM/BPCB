@@ -1,0 +1,2 @@
+Desconecte a PCB e ligue TX a RX no próprio adaptador. Em Comunicação da PCB escolha a porta, 115200 baud, 8 bits, nenhuma paridade, 1 parada e nenhum controle de fluxo; DTR e RTS desligados. Os bytes A5 5A 00 FF devem retornar iguais. A abertura da porta pode gerar transientes em DTR/RTS. O exemplo testa apenas a comunicação, não o firmware da PCB.
+
